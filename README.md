@@ -2,11 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## TODO List
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm install`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,7 +14,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### `Add env file`
+
+Go to project directory and add a file with name `.env`
+Add a variable in this file with name `REACT_APP_LOOM_PUBLIC_APP_ID`.
+
+The value can be added through Loom Developer account.
+Open [https://www.loom.com/developer-portal](https://www.loom.com/developer-portal) to set the value against local server browser.
+
+### `npm start`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
