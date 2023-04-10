@@ -8,6 +8,7 @@ const BUTTON_ID = "loom-record-sdk-button";
 
 function App() {
   const [videoHTML, setVideoHTML] = useState("");
+  const [url, setUrl] = useState("");
   const recordButtonRef = useRef(null);
 
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
       const sdkButton = configureButton({ element: button });
 
       sdkButton.on("insert-click", async (video) => {
+        setUrl(video.sharedUrl)
         const { html } = await oembed(video.sharedUrl, { width: 400 });
         setVideoHTML(html);
       });
@@ -41,6 +43,7 @@ function App() {
 
   const handleDelete = () => {
     setVideoHTML("");
+    setUrl("");
   };
 
   return (
@@ -53,6 +56,7 @@ function App() {
         {videoHTML ? "RE-RECORD" : "RECORD"}
       </button>
       <div className="video-container">
+        <p>{url}</p>
         <div dangerouslySetInnerHTML={{ __html: videoHTML }}></div>
       </div>
       {videoHTML && (
